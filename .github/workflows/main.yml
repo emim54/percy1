@@ -22,10 +22,13 @@ jobs:
     - name: Install Dependencies
       run: npm install
 
-    - name: Run Cypress and Percy Tests
+    - name: Set Percy Token
       run: |
-        npm install # Installiert alle Abhängigkeiten, einschließlich @percy/cli und @percy/cypress
-        npx percy exec -- cypress run
+        echo "PERCY_TOKEN=${{ secrets.PERCY_SECRET }}" >> $env:GITHUB_ENV
+        $env:PERCY_TOKEN="${{ secrets.PERCY_SECRET }}"
+
+    - name: Run Cypress and Percy Tests
+      run: npx percy exec -- cypress run
       env:
-        PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
+        PERCY_TOKEN: $env:PERCY_TOKEN
         CYPRESS_BASE_URL: 'https://ikrabau.de'
