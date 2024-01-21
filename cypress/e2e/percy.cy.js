@@ -13,6 +13,6 @@ describe('Website öffnen', () => {
 
   it('Besucht Ikra Bau Leistungen', () => {
     cy.visit('https://ikrabau.de/services/');
-    cy.percySnapshot('Ikra Bau Leistungen', { widths: [720, 1080, 1200] });
+    cy.percySnapshot('Ikra Bau Leistungen', { widths: [715, 1080, 1200] });
   });
 });
