@@ -23,12 +23,10 @@ jobs:
       run: npm install
 
     - name: Set Percy Token
-      run: |
-        echo "PERCY_TOKEN=${{ secrets.PERCY_SECRET }}" >> $env:GITHUB_ENV
-        $Env:PERCY_TOKEN="${{ secrets.PERCY_SECRET }}"
-
+      run: echo "PERCY_TOKEN=web_'code'" >> $GITHUB_ENV
+        
     - name: Run Cypress and Percy Tests
       run: npx percy exec -- cypress run
       env:
-        PERCY_TOKEN: $Env:PERCY_TOKEN
+        PERCY_TOKEN: ${{ env.PERCY_TOKEN }}
         CYPRESS_BASE_URL: 'https://ikrabau.de'
