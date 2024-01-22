@@ -34,7 +34,7 @@ jobs:
       if: steps.clear_cache.outputs.cache-hit != 'true'
 
     - name: Set Percy Token
-      run: echo "PERCY_TOKEN=web_'code'" >> $GITHUB_ENV
+      run: echo "PERCY_TOKEN=$PERCY_TOKEN" >> $GITHUB_ENV
         
     - name: Run Cypress and Percy Tests
       run: npx percy exec -- cypress run
