@@ -25,9 +25,13 @@ jobs:
       uses: actions/setup-node@v2
       with:
         node-version: '14'
+      # Führt die Installation nur beim ersten Mal aus
+      if: steps.clear_cache.outputs.cache-hit != 'true'
 
     - name: Install Dependencies
       run: npm install
+      # Führt die Installation nur beim ersten Mal aus
+      if: steps.clear_cache.outputs.cache-hit != 'true'
 
     - name: Set Percy Token
       run: echo "PERCY_TOKEN=web_'code'" >> $GITHUB_ENV
