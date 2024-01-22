@@ -11,6 +11,13 @@ jobs:
     runs-on: windows-latest
 
     steps:
+    - name: Clear Cache
+      uses: actions/cache@v2
+      with:
+        path: |
+          ~/.npm
+        key: ${{ runner.os }}-node-${{ hashFiles('**/*.lock') }}
+    
     - name: Checkout Repository
       uses: actions/checkout@v2
 
