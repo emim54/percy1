@@ -25,10 +25,10 @@ jobs:
     - name: Set Percy Token
       run: |
         echo "PERCY_TOKEN=${{ secrets.PERCY_SECRET }}" >> $env:GITHUB_ENV
-        $env:PERCY_TOKEN="web${{ secrets.PERCY_SECRET }}"
+        $Env:PERCY_TOKEN="${{ secrets.PERCY_SECRET }}"
 
     - name: Run Cypress and Percy Tests
       run: npx percy exec -- cypress run
       env:
-        PERCY_TOKEN: $env:PERCY_TOKEN
+        PERCY_TOKEN: $Env:PERCY_TOKEN
         CYPRESS_BASE_URL: 'https://ikrabau.de'
