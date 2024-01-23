@@ -5,5 +5,6 @@ module.exports = defineConfig({
     setupNodeEvents(on, config) {
       // implement node event listeners here
     },
+    supportFile: false // Setzen Sie supportFile auf false, wenn Sie keine Support-Datei benötigen
   },
 });
