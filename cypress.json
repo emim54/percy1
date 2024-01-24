@@ -1,5 +1,0 @@
-{
-  "baseUrl": "https://ikrabau.de/",
-  "integrationFolder": "cypress/e2e",
-  "supportFile": false
-}
