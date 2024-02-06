@@ -5,9 +5,9 @@
   },
   "description": "percy implementation test",
   "devDependencies": {
-    "@percy/cli": "^1.27.7",
+    "@percy/cli": "^1.28.0",
     "@percy/cypress": "^3.1.2",
-    "cypress": "^13.6.3"
+    "cypress": "^13.6.4"
   },
   "homepage": "https://github.com/emim54/percy1/tree/main",
   "keywords": [
@@ -25,5 +25,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "dependencies": {
+    "percy": "^5.0.0",
+    "percy-figma": "^1.0.8"
+  }
 }
